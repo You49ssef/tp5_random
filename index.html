@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            let nombreAleatoire = Math.floor(Math.random() * 10) + 1;
+            let tentatives = 0;
+            function run()
+            {
+                let nomber = parseInt(prompt("Devinez le nombre (entre 1 et 10) :"));      
+                          
+                if (isNaN(nomber))
+                {
+                    alert("Veuillez entrer un nombre valide.");
+                    run(); 
+                    return;
+                }
+                tentatives++;
+                if (nomber === nombreAleatoire)
+                {
+                    alert(`Bravo! Vous avez trouvé le nombre en ${ tentatives } tentatives.`);
+                } else if (nomber < nombreAleatoire)
+                {
+                    alert("Le nombre à deviner est plus grand.");
+                    run(); 
+                } else
+                {
+                    alert("Le nombre à deviner est plus petit.");
+                    run(); 
+                }
+            }
+
+    
+            run();
+    </script>
+    
+</body>
+</html>
